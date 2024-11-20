@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "29622947-bc2a-489d-ab49-224b8f21e4fc",
+		"name": "Api Rest Nominas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39887032"
+	},
+	"item": [
+		{
+			"name": "Listar todos los empleados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/empresa/api/empleados",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresa",
+						"api",
+						"empleados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Empleado por Dni",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre\": \"Luisaoo\",\r\n        \"dni\": \"30264103J\",\r\n        \"sexo\": \"F\",\r\n        \"categoria\": 4,\r\n        \"anyos\": 4\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/empresa/api/empleados/30264103J",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresa",
+						"api",
+						"empleados",
+						"30264103J"
+					]
+				},
+				"description": "Direccion para Actualizar empleados por dni"
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar Empleado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Nuevo Postman\",\r\n    \"dni\": \"12345678A\",\r\n    \"sexo\": \"M\",\r\n    \"categoria\": 5,\r\n    \"anyos\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/empresa/api/empleados",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresa",
+						"api",
+						"empleados"
+					]
+				},
+				"description": "URL con metodo post para agregar empleado."
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar sueldo por Dni",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/empresa/api/empleados/30264103J",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresa",
+						"api",
+						"empleados",
+						"30264103J"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar empleado por Dni",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/empresa/api/empleados/12345678A",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresa",
+						"api",
+						"empleados",
+						"12345678A"
+					]
+				},
+				"description": "URL que elimina al empleado buscandolo por su DNI"
+			},
+			"response": []
+		}
+	]
+}
