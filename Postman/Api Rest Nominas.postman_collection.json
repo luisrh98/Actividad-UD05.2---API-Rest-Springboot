@@ -140,6 +140,65 @@
 				"description": "URL que elimina al empleado buscandolo por su DNI"
 			},
 			"response": []
+		},
+		{
+			"name": "Buscar empleado por cualquier campo mediante JSON",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sexo\": \"F\",\r\n    \"categoria\": \"3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/empresa/api/empleados/buscar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresa",
+						"api",
+						"empleados",
+						"buscar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Empleado por cualquier campo mediante url",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/empresa/api/empleados/buscar?categoria=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresa",
+						"api",
+						"empleados",
+						"buscar"
+					],
+					"query": [
+						{
+							"key": "categoria",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

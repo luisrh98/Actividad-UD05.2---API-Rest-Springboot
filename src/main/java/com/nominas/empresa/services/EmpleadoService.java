@@ -21,6 +21,16 @@ public class EmpleadoService {
     public List<Empleado> listarEmpleados() {
         return empleadoRepository.findAll();
     }
+    
+    public List<Empleado> listarEmpleadosPorCualquierCampo(String nombre, String dni, String sexo, Integer categoria, Integer anyos) {
+        // Convertir parámetros vacíos en null
+        nombre = (nombre != null && nombre.trim().isEmpty()) ? null : nombre;
+        dni = (dni != null && dni.trim().isEmpty()) ? null : dni;
+        sexo = (sexo != null && sexo.trim().isEmpty()) ? null : sexo;
+
+        // Llamar al repositorio con los parámetros convertidos
+        return empleadoRepository.listarEmpleadosPorCualquierCampo(nombre, dni, sexo, categoria, anyos);
+    }
 
     public Empleado obtenerEmpleado(String dni) {
         return empleadoRepository.findByDni(dni);
